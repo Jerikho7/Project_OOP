@@ -28,6 +28,16 @@ def second_product():
 def category_data():
     return Category(
         name="Телевизоры",
-        description="Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+        description="Современный телевизор, который позволяет наслаждаться просмотром, "
+                    "станет вашим другом и помощником",
         products=[{"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}]
+    )
+
+
+@pytest.fixture
+def count_category_product(first_product, second_product):
+    return Category(
+        name="Смартфоны",
+        description="Смартфоны последних поколений, различных брендов",
+        products=[first_product, second_product]
     )
