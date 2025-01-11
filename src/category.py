@@ -16,6 +16,17 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
+    @property
+    def products(self):
+        """
+        Геттер для приватного списка __products.
+        Возвращает строку с информацией о продуктах в заданном формате.
+        """
+        return "".join(
+            f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
+            for product in self.__products
+        )
+
     def add_product(self, product):
         """
         Добавляет продукт в приватный список __products и увеличивает счетчик продуктов.
