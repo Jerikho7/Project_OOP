@@ -27,6 +27,10 @@ class Category:
             for product in self.__products
         )
 
+    @products.setter
+    def products(self, new_products):
+        self.__products = new_products
+
     def add_product(self, product):
         """
         Добавляет продукт в приватный список __products и увеличивает счетчик продуктов.
@@ -38,3 +42,7 @@ class Category:
             Category.product_count += 1
         else:
             raise ValueError("Only instances of Product can be added.")
+
+    @property
+    def products_in_list(self):
+        return self.__products

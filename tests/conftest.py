@@ -41,3 +41,14 @@ def count_category_product(first_product, second_product):
         description="Смартфоны последних поколений, различных брендов",
         products=[first_product, second_product]
     )
+
+
+@pytest.fixture
+def new_product():
+    """Новый продукт  для gроверка добавления продукта в категорию"""
+    return Product.new_product({
+        "name": "Haier 65 Smart TV S3",
+        "description": "4K Ultra HD, экран формата 16:9, частота обновления составляет 60 Гц",
+        "price": 70000.0,
+        "quantity": 5,
+    })
