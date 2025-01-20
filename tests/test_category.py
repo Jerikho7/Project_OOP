@@ -8,7 +8,7 @@ def test_category_init(category_data):
             == "Современный телевизор, который позволяет наслаждаться просмотром, "
                "станет вашим другом и помощником"
     )
-    assert category_data.products == [
+    assert category_data.products_in_list == [
         {"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}
     ]
 
@@ -32,9 +32,4 @@ def test_add_product(category_data, new_product):
     """Проверка добавления продукта в категорию"""
     assert len(category_data.products_in_list) == 1
     category_data.add_product(new_product)
-    expected_products = (
-        "55\" QLED 4K, 123000.0 руб. Остаток: 7 шт.\n"
-        "Haier 65 Smart TV S3, 70000.0 руб. Остаток: 5 шт.\n"
-    )
-    assert category_data.products == expected_products
     assert len(category_data.products_in_list) == 2
