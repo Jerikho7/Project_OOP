@@ -18,7 +18,10 @@ class Category:
 
     def __str__(self):
         """Строковое представление категории"""
-        return f"{self.name}, количество продуктов: {len(self.__products)} шт."
+        total_quantity = 0
+        for product in self.__products:
+            total_quantity += product.quantity
+        return f"{self.name}, количество продуктов: {total_quantity} шт."
 
     @property
     def products(self):

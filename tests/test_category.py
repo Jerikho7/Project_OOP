@@ -37,5 +37,5 @@ def test_add_product(category_data, new_product):
 
 def test_category_str(category_data):
     """Проверка строкового представления категории"""
-    expected_str = "Телевизоры, количество продуктов: 1 шт."
+    expected_str = "Телевизоры, количество продуктов: 7 шт."
     assert str(category_data) == expected_str
