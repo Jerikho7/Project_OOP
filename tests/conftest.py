@@ -52,3 +52,11 @@ def new_product():
         "price": 70000.0,
         "quantity": 5,
     })
+
+
+@pytest.fixture
+def sample_products():
+    """Фикстура для создания тестовых продуктов"""
+    product1 = Product("Laptop", "A powerful laptop", 100, 10)  # 100 * 10 = 1000
+    product2 = Product("Mouse", "Wireless mouse", 200, 2)  # 200 * 2 = 400
+    return product1, product2

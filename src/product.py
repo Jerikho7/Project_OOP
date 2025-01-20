@@ -30,6 +30,16 @@ class Product:
         else:
             self.__price = value
 
+    def __str__(self):
+        """Строковое представление продукта"""
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        """Магический метод сложения для расчета полной стоимости товаров на складе"""
+        if isinstance(other, Product):
+            return self.price * self.quantity + other.price * other.quantity
+        raise TypeError("Сложение возможно только между объектами класса Product")
+
     @classmethod
     def new_product(cls, product_data):
         """
