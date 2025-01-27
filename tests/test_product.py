@@ -46,3 +46,15 @@ def test_new_product():
     assert product.description == "A flagship smartphone"
     assert product.price == 120000.0
     assert product.quantity == 5
+
+
+def test_product_str(first_product):
+    """Проверка строкового представления продукта"""
+    assert str(first_product) == "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт."
+
+
+def test_product_addition(sample_products):
+    """Проверка сложения стоимости товаров"""
+    product1, product2 = sample_products
+    total = product1 + product2
+    assert total == 1400

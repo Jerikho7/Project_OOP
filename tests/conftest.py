@@ -30,7 +30,11 @@ def category_data():
         name="Телевизоры",
         description="Современный телевизор, который позволяет наслаждаться просмотром, "
                     "станет вашим другом и помощником",
-        products=[{"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}]
+        products=[
+            Product.new_product(
+                {"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}
+            )
+        ]
     )
 
 
@@ -52,3 +56,11 @@ def new_product():
         "price": 70000.0,
         "quantity": 5,
     })
+
+
+@pytest.fixture
+def sample_products():
+    """Фикстура для создания тестовых продуктов"""
+    product1 = Product("Laptop", "A powerful laptop", 100, 10)  # 100 * 10 = 1000
+    product2 = Product("Mouse", "Wireless mouse", 200, 2)  # 200 * 2 = 400
+    return product1, product2
