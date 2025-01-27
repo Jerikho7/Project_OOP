@@ -2,6 +2,7 @@ import pytest
 
 from src.product import Product
 from src.category import Category
+from src.product_types import Smartphone, LawnGrass
 
 
 @pytest.fixture
@@ -64,3 +65,32 @@ def sample_products():
     product1 = Product("Laptop", "A powerful laptop", 100, 10)  # 100 * 10 = 1000
     product2 = Product("Mouse", "Wireless mouse", 200, 2)  # 200 * 2 = 400
     return product1, product2
+
+
+
+@pytest.fixture
+def first_smartphone():
+    return Smartphone(
+        name="iPhone 13",
+        description="Флагман Apple",
+        price=100000.0,
+        quantity=5,
+        efficiency="A15 Bionic",
+        model="iPhone 13",
+        memory=256,
+        color="Синий"
+    )
+
+
+@pytest.fixture
+def lawngrass():
+    """Данные для теста lawngrass"""
+    return LawnGrass(
+        name="Lawngrass",
+        description="Lawngrass small size",
+        price=1500.0,
+        quantity=5,
+        country="Russia",
+        germination_period="2 month",
+        color="Зелёный"
+    )
