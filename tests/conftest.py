@@ -30,7 +30,11 @@ def category_data():
         name="Телевизоры",
         description="Современный телевизор, который позволяет наслаждаться просмотром, "
                     "станет вашим другом и помощником",
-        products=[{"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}]
+        products=[
+            Product.new_product(
+                {"name": '55" QLED 4K', "description": "Фоновая подсветка", "price": 123000.0, "quantity": 7}
+            )
+        ]
     )
 
 
