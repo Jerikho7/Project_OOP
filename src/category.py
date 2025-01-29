@@ -39,12 +39,19 @@ class Category:
         Добавляет продукт в приватный список __products и увеличивает счетчик продуктов.
         Аргумент:
         product (Product): объект класса Product.
+        Исключение:
+            TypeError: если передан не объект класса Product или его наследников.
         """
-        if isinstance(product, Product):
-            self.__products.append(product)
-            Category.product_count += 1
-        else:
-            raise ValueError("Only instances of Product can be added.")
+        # if isinstance(product, Product):
+        #     self.__products.append(product)
+        #     Category.product_count += 1
+        # else:
+        #     raise ValueError("Only instances of Product can be added.")
+        if not isinstance(product, Product):
+            raise TypeError("Можно добавлять только объекты типа Product")
+
+        self.__products.append(product)
+        Category.product_count += 1
 
     @property
     def products_in_list(self):

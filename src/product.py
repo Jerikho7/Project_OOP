@@ -35,10 +35,10 @@ class Product:
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        """Магический метод сложения для расчета полной стоимости товаров на складе"""
-        if isinstance(other, Product):
-            return self.price * self.quantity + other.price * other.quantity
-        raise TypeError("Сложение возможно только между объектами класса Product")
+        """Сложение стоимости товаров одного типа"""
+        if type(self) is not type(other):
+            raise TypeError("Сложение возможно только между товарами одного типа")
+        return self.__price * self.quantity + other.__price * other.quantity
 
     @classmethod
     def new_product(cls, product_data):
