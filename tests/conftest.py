@@ -67,7 +67,6 @@ def sample_products():
     return product1, product2
 
 
-
 @pytest.fixture
 def first_smartphone():
     return Smartphone(
