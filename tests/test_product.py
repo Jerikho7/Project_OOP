@@ -27,7 +27,7 @@ def test_price_getter_setter(capsys):
     # Попытка установить недопустимую цену
     product.price = -500.0  # Выводится предупреждение
     message = capsys.readouterr()
-    assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    assert message.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
     assert product.price == 2000.0  # Цена не изменилась
 
 

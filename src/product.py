@@ -1,6 +1,16 @@
+from abc import ABC, abstractmethod
+
+from src.mixin_product import MixinProduct
 
 
-class Product:
+class BaseProduct(ABC):
+
+    @abstractmethod
+    def __init__(self):
+        pass
+
+
+class Product(MixinProduct, BaseProduct):
     name: str
     description: str
     price: float
@@ -11,6 +21,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     @property
     def price(self):

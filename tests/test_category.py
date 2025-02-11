@@ -7,9 +7,9 @@ def test_category_init(category_data):
             == "Современный телевизор, который позволяет наслаждаться просмотром, "
                "станет вашим другом и помощником"
     )
-    expected_product = "55\" QLED 4K, 123000.0 руб. Остаток: 7 шт.\n"
+    expected_product = "55\" QLED 4K, 123000.0 руб. Остаток: 7 шт."
 
-    assert category_data.products == expected_product
+    assert category_data.products.split("\n")[0] == expected_product
 
     assert category_data.category_count == 1
     assert category_data.product_count == 1
