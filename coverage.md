@@ -13,14 +13,19 @@ tests/test_product_types.py ..                                           [100%]
 ---------- coverage: platform darwin, python 3.11.4-final-0 ----------
 Name                          Stmts   Miss  Cover
 -------------------------------------------------
+src/__init__.py                   0      0   100%
+src/category.py                  28      1    96%
+src/mixin_product.py              5      0   100%
+src/product.py                   29      1    97%
+src/product_types.py             13      0   100%
 tests/__init__.py                 0      0   100%
-tests/conftest.py                30      0   100%
+tests/conftest.py                26      0   100%
 tests/test_category.py           19      0   100%
-tests/test_mixin_product.py      12      0   100%
-tests/test_product.py            32      0   100%
+tests/test_mixin_product.py      10      0   100%
+tests/test_product.py            31      0   100%
 tests/test_product_types.py      17      0   100%
 -------------------------------------------------
-TOTAL                           110      0   100%
+TOTAL                           178      2    99%
 
 
-============================== 13 passed in 0.11s ==============================
+============================== 13 passed in 0.14s ==============================
