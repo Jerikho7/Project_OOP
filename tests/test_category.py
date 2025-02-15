@@ -1,3 +1,6 @@
+import pytest
+
+from src.category import Category
 
 
 def test_category_init(category_data):
@@ -38,3 +41,9 @@ def test_category_str(category_data):
     """Проверка строкового представления категории"""
     expected_str = "Телевизоры, количество продуктов: 7 шт."
     assert str(category_data) == expected_str
+
+
+def test_middle_price():
+    category_empty = Category("Пустая категория", "Категория без продуктов", [])
+    assert category_empty.middle_price() == 0
+
