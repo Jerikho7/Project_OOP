@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -58,3 +60,8 @@ def test_product_addition(sample_products):
     product1, product2 = sample_products
     total = product1 + product2
     assert total == 1400
+
+
+def test_raise():
+    with pytest.raises(ValueError):
+        product_test = Product("Бракованный товар", "Неверное количество", 1000.0, 0)
